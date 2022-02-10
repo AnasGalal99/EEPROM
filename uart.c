@@ -10,9 +10,9 @@
 
 void uart_init()
 {
-	UCSR0C = (1<<UCSZ00)|(1<<UCSZ01);
-	UCSR0B = (1<<TXEN0)|(1<<RXEN0);
-	UBRR0H = (unsigned char)(51>>8);
+	UCSR0C = (1<<UCSZ00)|(1<<UCSZ01);   //determining data frame
+	UCSR0B = (1<<TXEN0)|(1<<RXEN0);     //enable transmitter and receiver
+	UBRR0H = (unsigned char)(51>>8);    //init baud rate
 	UBRR0L = (unsigned char)51;
 }
 
